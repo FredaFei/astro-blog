@@ -22,12 +22,16 @@ module.exports = {
 		{
       "files": "*.css",
       "options": {
-        // "parser": "css",
-        // "cssSyntax": "css",
+        "parser": "css",
+        "cssSyntax": "css",
         // "insertPragma": true,
         // "requirePragma": false,
         // 关键配置：禁止在 ! 前添加空格
-        "embeddedLanguageFormatting": "off"
+        "embeddedLanguageFormatting": "off",
+				// 直接替换 ! 后的空格
+        // format: (text) => {
+        //   return text.replace(/\s!+/g, '!');
+        // }
       }
     }
 	],
