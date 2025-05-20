@@ -132,3 +132,6 @@
 	--tw-prose-quotes: var(--color-quote);
 	--tw-prose-th-borders: #666;
 }
+.prose-sm {
+	font-size: 16px;
+}
