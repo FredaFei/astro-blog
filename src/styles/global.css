@@ -53,6 +53,7 @@
 
 	.title {
 		@apply text-accent-2 text-2xl font-semibold;
+		font-size: var(--text-3xl);
 	}
 
 	.prose h2::before,
