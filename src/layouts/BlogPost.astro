@@ -9,9 +9,10 @@ import BaseLayout from "./Base.astro";
 
 interface Props {
 	post: CollectionEntry<"post">;
+	hasNav?: boolean;
 }
 
-const { post } = Astro.props;
+const { post, hasNav = false } = Astro.props;
 const { ogImage, title, description, updatedDate, publishDate } = post.data;
 const socialImage = ogImage ?? `/og-image/${post.id}.png`;
 const articleDate = updatedDate?.toISOString() ?? publishDate.toISOString();
@@ -26,6 +27,7 @@ const readingTime: string = remarkPluginFrontmatter.readingTime;
 		ogImage: socialImage,
 		title,
 	}}
+	hasNav={hasNav}
 >
 	<article class="grow break-words" data-pagefind-body>
 		<div id="blog-hero" class="mb-12"><Masthead content={post} readingTime={readingTime} /></div>

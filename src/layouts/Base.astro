@@ -10,11 +10,13 @@ import type { SiteMeta } from "@/types";
 interface Props {
 	meta: SiteMeta;
 	hasFooter?: boolean;
+	hasNav?: boolean;
 }
 
 const {
 	meta: { articleDate, description = siteConfig.description, ogImage, title },
 	hasFooter = true,
+	hasNav = false,
 } = Astro.props;
 ---
 
@@ -31,6 +33,6 @@ const {
 		<main id="main">
 			<slot />
 		</main>
-		{hasFooter && <Footer />}
+		{hasFooter && <Footer hasNav={hasNav} />}
 	</body>
 </html>
