@@ -18,6 +18,18 @@ const allPostsByDate = allPosts
 // const MAX_NOTES = 5;
 // const allNotes = await getCollection("note");
 // const latestNotes = allNotes.sort(collectionDateSort).slice(0, MAX_NOTES);
+const latestProjects = [
+	{
+		name: "Tomato's daily cost",
+		desc: "A lightweight, user-friendly web app for tracking daily expenses and income—simplifying your financial management.",
+		link: "https://github.com/FredaFei/peach",
+	},
+	{
+		name: "amazing-ui",
+		desc: "Extensively customizable and flexible UI components based on Vue3",
+		link: "https://github.com/FredaFei/amazing-ui",
+	},
+];
 ---
 
 <PageLayout meta={{ title: "Home" }}>
@@ -40,6 +52,25 @@ const allPostsByDate = allPosts
 			}
 		</ul>
 	</section>
+	{
+		latestProjects.length > 0 && (
+			<section class="mt-16">
+				<h2 class="title text-accent mb-6 text-xl">
+					<a href="https://github.com/fredafei">Projects</a>
+				</h2>
+				<ul class="space-y-6" role="list">
+					{latestProjects.map(({ name, desc }) => (
+						<li>
+							<a href="https://github.com/fredafei" class="cactus-link">
+								{name}
+							</a>
+							<span> : {desc}</span>
+						</li>
+					))}
+				</ul>
+			</section>
+		)
+	}
 	<!-- {
 		latestNotes.length > 0 && (
 			<section class="mt-16">
